@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>巻末特典：鑑定書テンプレート｜数秘術鑑定士講座</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { sand:{50:'#fafaf9',100:'#f5f5f4',200:'#e7e5e4',300:'#d6d3d1',400:'#a8a29e',500:'#78716c',600:'#57534e',700:'#44403c',800:'#292524',900:'#1c1917'}, aura:{teal:'#8B7CF6',emerald:'#6D4FE0',rose:'#e11d48',gold:'#FF9E1B',violet:'#7e22ce',sky:'#0369a1'} },
+      fontFamily: { serif:['Georgia','Times New Roman','serif'], sans:['-apple-system','Hiragino Kaku Gothic ProN','Yu Gothic','YuGothic','Meiryo','sans-serif'], jp:['Yu Mincho','YuMincho','Hiragino Mincho ProN','Hiragino Mincho Pro','serif'] }
+    } } }
+  </script>
+  <link rel="stylesheet" href="assets/numerology-style.css?v=6">
+</head>
+<body>
+  <nav class="border-b border-sand-100 no-print"><div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between"><div class="flex items-center gap-2"><span class="ks-logo" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><span class="font-extrabold text-sand-800">数秘術鑑定士講座</span></div><a href="index.html" class="day-pill">🏠 ホーム</a></div></nav>
+  <div class="day-nav no-print"><div class="day-nav__inner">
+    <a href="step0.html" class="day-pill">STEP0</a>
+    <a href="step1.html" class="day-pill">STEP1</a>
+    <a href="step2.html" class="day-pill">STEP2</a>
+    <a href="step3.html" class="day-pill">STEP3</a>
+    <a href="step4.html" class="day-pill">STEP4</a>
+    <a href="step5.html" class="day-pill">STEP5</a>
+    <a href="step6.html" class="day-pill">STEP6</a>
+    <a href="step7.html" class="day-pill">STEP7</a>
+    <a href="step8.html" class="day-pill">STEP8</a>
+    <a href="step9.html" class="day-pill">STEP9</a>
+    <a href="step10.html" class="day-pill">STEP10</a>
+    <a href="step11.html" class="day-pill">STEP11</a>
+    <a href="step12.html" class="day-pill">STEP12</a>
+    <a href="graduation.html" class="day-pill">卒業課題</a>
+    <a href="bonus.html" class="day-pill is-current">巻末特典</a>
+  </div></div>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 w-full">
+    <div class="hero-panel text-center mb-10 no-print">
+      <span class="part-badge">巻末特典</span>
+      <div class="eyebrow text-[11px] text-sand-400 mb-3">READING CERTIFICATE TEMPLATES</div>
+      <h1 class="jp-title font-extrabold text-sand-800 text-xl">鑑定書テンプレート</h1>
+      <p class="text-sm text-sand-500 leading-relaxed mt-2">よくある相談5パターンの鑑定書を作れます。①名前と生年月日を入れてAI用プロンプトを作成 →②ChatGPTなどに貼り付ける →③返ってきた文章を貼り戻すと、印刷・PDF保存できる鑑定書が完成します。</p>
+    </div>
+
+    <section class="mb-8 no-print"><div id="senseiOpen"></div></section>
+
+    <section class="mb-6 no-print">
+      <div class="flex flex-wrap gap-2" id="tabRow"></div>
+    </section>
+
+    <section class="mb-8 no-print">
+      <h2 class="jp-title text-base text-sand-700 mb-4 flex items-center gap-2"><span class="text-aura-rose">①</span> 相談者の情報を入力する</h2>
+      <div class="bg-white card rounded-2xl border border-sand-200 p-5" id="formBox"></div>
+    </section>
+
+    <section class="mb-8 no-print" id="promptSection" style="display:none">
+      <h2 class="jp-title text-base text-sand-700 mb-4 flex items-center gap-2"><span class="text-aura-rose">②</span> AIに貼り付けるプロンプト</h2>
+      <div class="bg-white card rounded-2xl border border-sand-200 p-5">
+        <textarea id="promptArea" class="w-full border border-sand-200 rounded-xl px-4 py-3 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal copy-area" readonly></textarea>
+        <button id="promptCopyBtn" class="mt-3 bg-aura-teal text-white font-bold rounded-full px-6 py-3 text-sm hover:bg-aura-emerald transition">プロンプトをコピーする</button>
+        <p id="promptCopied" class="text-[11px] text-aura-emerald mt-2" style="display:none">コピーしました。ChatGPTなどのAIチャットに貼り付けてみましょう。</p>
+      </div>
+    </section>
+
+    <section class="mb-8 no-print" id="pasteSection" style="display:none">
+      <h2 class="jp-title text-base text-sand-700 mb-4 flex items-center gap-2"><span class="text-aura-rose">③</span> AIの回答を貼り付けて鑑定書にする</h2>
+      <div class="bg-white card rounded-2xl border border-sand-200 p-5">
+        <textarea id="pasteArea" class="w-full border border-sand-200 rounded-xl px-4 py-3 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal copy-area" placeholder="ChatGPTなどが作成した鑑定文をここに貼り付けてください"></textarea>
+        <button id="genBtn" class="mt-4 bg-aura-teal text-white font-bold rounded-full px-6 py-3 text-sm hover:bg-aura-emerald transition">鑑定書にする</button>
+        <p id="pasteError" class="text-[11px] text-rose-500 mt-2" style="display:none">AIの回答を貼り付けてください。</p>
+      </div>
+    </section>
+
+    <section class="mb-6 no-print" id="printBar" style="display:none">
+      <button id="printBtn" class="bg-aura-teal text-white font-bold rounded-full px-6 py-3 text-sm hover:bg-aura-emerald transition">🖨 印刷する／PDFで保存する</button>
+      <p class="text-[11px] text-sand-400 mt-2">印刷ダイアログが開いたら、送信先を「PDFに保存」に変更するとPDFファイルとして保存できます。</p>
+    </section>
+
+    <section id="certificateArea"></section>
+
+    <div class="day-footer-nav no-print">
+      <a href="graduation.html"><span class="label-sm">BACK</span><b>← 卒業課題</b></a>
+      <a href="index.html" class="next"><span class="label-sm">HOME</span><b>講座トップへ戻る →</b></a>
+    </div>
+  </main>
+
+  <script src="assets/numerology-data.js?v=6"></script>
+  <script>
+    document.getElementById('senseiOpen').innerHTML = sensei(`
+      <p>卒業おめでとうございます！ここからは実践のための特典コーナーです。よくある相談5つの鑑定書テンプレートを用意しました。</p>
+      <p>①名前と生年月日を入れてAI用のプロンプトを作る →②ChatGPTなどに貼り付ける →③返ってきた鑑定文を貼り戻す、の3ステップで、印刷・PDF保存できる鑑定書が完成します。</p>
+    `);
+
+    const TONE_RULES = `【文章のトーン・書き方】
+・バーナム効果を意識し、誰にでも当てはまりそうでいて「まさに自分のことだ」と感じてもらえるような、自然で温かい日本語表現にする
+・「当たっている」と感じてもらえるよう、言い切る言葉や、相手の心にすっと入り込むような表現も盛り込む
+・読みやすいように、適度に改行を入れる
+・長所だけでなく、短所や気をつけたいポイントも必ず入れる
+・不安をあおったり、悩みを頭ごなしに否定したりはしない
+・現実的な行動提案を入れる
+・Markdown記法（**太字**などのアスタリスク表記）は使わず、プレーンテキストで書く
+・文字数は900〜1200字程度にする`;
+
+    const templates = {
+      love: { label:'恋愛・結婚', eyebrow:'LOVE & MARRIAGE', theme:'love', placeholder:'例：交際中の相手との今後について' },
+      work: { label:'仕事・転職', eyebrow:'CAREER', theme:'work', placeholder:'例：今の仕事を続けるか、転職するか' },
+      relationship: { label:'人間関係', eyebrow:'RELATIONSHIP', theme:'relationship', placeholder:'例：職場の人間関係で悩んでいる' },
+      parent: { label:'親子', eyebrow:'PARENT & CHILD', placeholder:'例：子どもへの接し方について' },
+      money: { label:'お金', eyebrow:'MONEY', theme:'money', placeholder:'例：お金との向き合い方について' }
+    };
+    let currentTab = 'love';
+    let state = null; // { title, eyebrow, name, readerName, theme, numbersHtml }
+
+    const tabRow = document.getElementById('tabRow');
+    function resetDownstream(){
+      document.getElementById('promptSection').style.display = 'none';
+      document.getElementById('pasteSection').style.display = 'none';
+      document.getElementById('printBar').style.display = 'none';
+      document.getElementById('certificateArea').innerHTML = '';
+      state = null;
+    }
+    function renderTabs(){
+      tabRow.innerHTML = Object.keys(templates).map(key => `<button type="button" class="template-tab ${key===currentTab?'is-active':''}" data-tab="${key}">${templates[key].label}</button>`).join('');
+      tabRow.querySelectorAll('.template-tab').forEach(btn => {
+        btn.addEventListener('click', () => { currentTab = btn.dataset.tab; renderTabs(); renderForm(); resetDownstream(); });
+      });
+    }
+
+    function singleForm(){
+      return `
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div><label class="block text-[12px] font-bold text-sand-500 mb-2">お名前</label><input id="cName" class="w-full border border-sand-200 rounded-xl px-4 py-3 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal" placeholder="例：田中 花子"></div>
+          <div><label class="block text-[12px] font-bold text-sand-500 mb-2">お名前（ローマ字）</label><input id="cRomaji" class="w-full border border-sand-200 rounded-xl px-4 py-3 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal" placeholder="例：TANAKA HANAKO"></div>
+          <div><label class="block text-[12px] font-bold text-sand-500 mb-2">生年月日</label><input id="cDate" type="date" class="w-full border border-sand-200 rounded-xl px-4 py-3 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal" min="1900-01-01" max="2030-12-31"></div>
+        </div>
+        <label class="block text-[12px] font-bold text-sand-500 mb-2 mt-4">相談内容（任意）</label>
+        <input id="cTheme" class="w-full border border-sand-200 rounded-xl px-4 py-3 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal" placeholder="${templates[currentTab].placeholder}">
+        <label class="block text-[12px] font-bold text-sand-500 mb-2 mt-4">鑑定士名（任意）</label>
+        <input id="readerName" class="w-full border border-sand-200 rounded-xl px-4 py-3 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal" placeholder="例：Luna">
+        <button id="promptBtn" class="mt-4 bg-aura-teal text-white font-bold rounded-full px-6 py-3 text-sm hover:bg-aura-emerald transition">プロンプトを作る</button>
+        <p id="cError" class="text-[11px] text-rose-500 mt-2" style="display:none">お名前・ローマ字・生年月日をすべて入力してください。</p>`;
+    }
+
+    function parentForm(){
+      return `
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <p class="text-[11px] font-bold text-aura-teal mb-2">親御さん</p>
+            <label class="block text-[12px] font-bold text-sand-500 mb-1">お名前</label>
+            <input id="pName" class="w-full border border-sand-200 rounded-xl px-4 py-2.5 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal mb-2" placeholder="例：田中 花子">
+            <label class="block text-[12px] font-bold text-sand-500 mb-1">お名前（ローマ字）</label>
+            <input id="pRomaji" class="w-full border border-sand-200 rounded-xl px-4 py-2.5 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal mb-2" placeholder="例：TANAKA HANAKO">
+            <label class="block text-[12px] font-bold text-sand-500 mb-1">生年月日</label>
+            <input id="pDate" type="date" class="w-full border border-sand-200 rounded-xl px-4 py-2.5 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal" min="1900-01-01" max="2030-12-31">
+          </div>
+          <div>
+            <p class="text-[11px] font-bold text-aura-teal mb-2">お子さん</p>
+            <label class="block text-[12px] font-bold text-sand-500 mb-1">お名前</label>
+            <input id="cName2" class="w-full border border-sand-200 rounded-xl px-4 py-2.5 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal mb-2" placeholder="例：田中 空">
+            <label class="block text-[12px] font-bold text-sand-500 mb-1">お名前（ローマ字）</label>
+            <input id="cRomaji2" class="w-full border border-sand-200 rounded-xl px-4 py-2.5 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal mb-2" placeholder="例：TANAKA SORA">
+            <label class="block text-[12px] font-bold text-sand-500 mb-1">生年月日</label>
+            <input id="cDate2" type="date" class="w-full border border-sand-200 rounded-xl px-4 py-2.5 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal" min="1900-01-01" max="2030-12-31">
+          </div>
+        </div>
+        <label class="block text-[12px] font-bold text-sand-500 mb-2 mt-4">相談内容（任意）</label>
+        <input id="cTheme" class="w-full border border-sand-200 rounded-xl px-4 py-3 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal" placeholder="${templates.parent.placeholder}">
+        <label class="block text-[12px] font-bold text-sand-500 mb-2 mt-4">鑑定士名（任意）</label>
+        <input id="readerName" class="w-full border border-sand-200 rounded-xl px-4 py-3 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal" placeholder="例：Luna">
+        <button id="promptBtn" class="mt-4 bg-aura-teal text-white font-bold rounded-full px-6 py-3 text-sm hover:bg-aura-emerald transition">プロンプトを作る</button>
+        <p id="cError" class="text-[11px] text-rose-500 mt-2" style="display:none">両方のお名前・ローマ字・生年月日をすべて入力してください。</p>`;
+    }
+
+    const formBox = document.getElementById('formBox');
+    function renderForm(){
+      formBox.innerHTML = currentTab === 'parent' ? parentForm() : singleForm();
+      document.getElementById('promptBtn').addEventListener('click', currentTab === 'parent' ? onPromptParent : onPromptSingle);
+    }
+
+      function numberBadges(chart){
+        return ['lifePath','birthday','destiny','soul','personality'].map(k => `
+          <div class="cert-badge">
+            <div class="ring">${displayNumber(chart[k])}</div>
+            <div class="role">${numberRoles[k].name.replace('ナンバー','')}</div>
+            <div class="kw">${meaningOf(chart[k]).keyword}</div>
+          </div>`).join('');
+      }
+
+    function chartLines(chart){
+      return ['lifePath','birthday','destiny','soul','personality'].map(k =>
+        `${numberRoles[k].name}：${plainNum(chart[k])}（${meaningOf(chart[k]).keyword}）`
+      ).join('\n');
+    }
+
+    function todayStr(){
+      const d = new Date();
+      return `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`;
+    }
+
+    function showPrompt(promptText){
+      document.getElementById('promptArea').value = promptText;
+      document.getElementById('promptSection').style.display = 'block';
+      document.getElementById('pasteSection').style.display = 'block';
+      document.getElementById('pasteArea').value = '';
+      document.getElementById('printBar').style.display = 'none';
+      document.getElementById('certificateArea').innerHTML = '';
+      document.getElementById('promptSection').scrollIntoView({ behavior:'smooth', block:'start' });
+    }
+
+    function onPromptSingle(){
+      const name = document.getElementById('cName').value.trim();
+      const romaji = document.getElementById('cRomaji').value.trim();
+      const date = document.getElementById('cDate').value;
+      const theme = document.getElementById('cTheme').value.trim();
+      const readerName = document.getElementById('readerName').value.trim();
+      const errEl = document.getElementById('cError');
+      if(!name || !romaji || !date){ errEl.style.display = 'block'; return; }
+      errEl.style.display = 'none';
+      const [y,m,d] = date.split('-').map(Number);
+      const chart = calcChart(romaji, y, m, d);
+      chart.name = name;
+      const tpl = templates[currentTab];
+      const prompt = `あなたは経験豊富な数秘術鑑定士です。以下の情報をもとに、「${tpl.label}」をテーマにした鑑定文を作成してください。
+
+【相談者】
+${name}さん
+
+【数秘チャート】
+${chartLines(chart)}
+
+【相談内容】
+${theme || tpl.placeholder.replace('例：','')}
+
+${TONE_RULES}`;
+      state = { title:`${tpl.label} 鑑定書`, eyebrow:tpl.eyebrow, name, readerName, theme, numbersHtml:numberBadges(chart) };
+      showPrompt(prompt);
+    }
+
+    function onPromptParent(){
+      const pName = document.getElementById('pName').value.trim();
+      const pRomaji = document.getElementById('pRomaji').value.trim();
+      const pDate = document.getElementById('pDate').value;
+      const cName = document.getElementById('cName2').value.trim();
+      const cRomaji = document.getElementById('cRomaji2').value.trim();
+      const cDate = document.getElementById('cDate2').value;
+      const theme = document.getElementById('cTheme').value.trim();
+      const readerName = document.getElementById('readerName').value.trim();
+      const errEl = document.getElementById('cError');
+      if(!pName || !pRomaji || !pDate || !cName || !cRomaji || !cDate){ errEl.style.display = 'block'; return; }
+      errEl.style.display = 'none';
+      const [py,pm,pd] = pDate.split('-').map(Number);
+      const [cy,cm,cd] = cDate.split('-').map(Number);
+      const pChart = calcChart(pRomaji, py, pm, pd); pChart.name = pName;
+      const cChart = calcChart(cRomaji, cy, cm, cd); cChart.name = cName;
+      const prompt = `あなたは経験豊富な数秘術鑑定士です。以下の親子2人の情報をもとに、「親子」をテーマにした鑑定文を作成してください。
+
+【親御さん】
+${pName}さん
+${chartLines(pChart)}
+
+【お子さん】
+${cName}さん
+${chartLines(cChart)}
+
+【相談内容】
+${theme || '子どもへの接し方について'}
+
+${TONE_RULES}`;
+      const numbersHtml = `
+        <div class="cert-group-title">${pName}さん</div>
+        ${numberBadges(pChart)}
+        <div class="cert-group-title">${cName}さん</div>
+        ${numberBadges(cChart)}`;
+      state = { title:`親子 鑑定書`, eyebrow:templates.parent.eyebrow, name:`${pName}さん・${cName}`, readerName, theme, numbersHtml };
+      showPrompt(prompt);
+    }
+
+    document.getElementById('promptCopyBtn')?.addEventListener('click', async () => {
+      const area = document.getElementById('promptArea');
+      try{ await navigator.clipboard.writeText(area.value); }
+      catch(e){ area.select(); document.execCommand('copy'); }
+      const el = document.getElementById('promptCopied');
+      el.style.display = 'block';
+      setTimeout(() => { el.style.display = 'none'; }, 3000);
+    });
+
+    document.getElementById('genBtn')?.addEventListener('click', () => {
+      const body = document.getElementById('pasteArea').value.trim();
+      const errEl = document.getElementById('pasteError');
+      if(!body || !state){ errEl.style.display = 'block'; return; }
+      errEl.style.display = 'none';
+      renderCertificate({ ...state, body });
+    });
+
+    function renderCertificate({ title, eyebrow, name, readerName, theme, numbersHtml, body }){
+      const signatureName = readerName || '鑑定士名';
+      document.getElementById('certificateArea').innerHTML = `
+        <div class="certificate-sheet">
+          <div class="cert-ambient" aria-hidden="true">
+            <span>1</span><span>3</span><span>5</span><span>7</span><span>9</span>
+          </div>
+          <div class="cert-frame">
+            <span class="corner corner-tl"></span><span class="corner corner-tr"></span>
+            <span class="corner corner-bl"></span><span class="corner corner-br"></span>
+            <div class="cert-kicker">Personal Numerology Reading</div>
+            <div class="cert-emblem"><span>9</span></div>
+            <h1 class="cert-title-jp">${title}</h1>
+            <p class="cert-title-en">${eyebrow} ｜ NUMEROLOGY READING CERTIFICATE</p>
+            <div class="cert-divider"><span>Numbers reveal your inner rhythm</span></div>
+            <div class="cert-meta">
+              <span><b>発行日</b>　${todayStr()}</span>
+              <span><b>相談者</b>　${name}さん</span>
+            </div>
+            ${theme ? `<p class="cert-theme"><b>相談内容</b><span>${theme}</span></p>` : ''}
+            <div class="cert-numbers">${numbersHtml}</div>
+            <div class="cert-body-wrap"><div class="cert-body">${body}</div></div>
+            <div class="cert-signature">
+              <div>
+                <div class="sig-label">READING BY</div>
+                <div class="sig-name">${signatureName}</div>
+              </div>
+            </div>
+          </div>
+        </div>`;
+      document.getElementById('printBar').style.display = 'block';
+      document.getElementById('certificateArea').scrollIntoView({ behavior:'smooth', block:'start' });
+    }
+
+    document.getElementById('printBtn')?.addEventListener('click', () => window.print());
+
+    renderTabs();
+    renderForm();
+  </script>
+</body>
+</html>
