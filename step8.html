@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>STEP8 相性鑑定｜数秘術鑑定士講座</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { sand:{50:'#fafaf9',100:'#f5f5f4',200:'#e7e5e4',300:'#d6d3d1',400:'#a8a29e',500:'#78716c',600:'#57534e',700:'#44403c',800:'#292524',900:'#1c1917'}, aura:{teal:'#8B7CF6',emerald:'#6D4FE0',rose:'#e11d48',gold:'#FF9E1B',violet:'#7e22ce',sky:'#0369a1'} },
+      fontFamily: { serif:['Georgia','Times New Roman','serif'], sans:['-apple-system','Hiragino Kaku Gothic ProN','Yu Gothic','YuGothic','Meiryo','sans-serif'], jp:['Yu Mincho','YuMincho','Hiragino Mincho ProN','Hiragino Mincho Pro','serif'] }
+    } } }
+  </script>
+  <link rel="stylesheet" href="assets/numerology-style.css?v=6">
+</head>
+<body>
+  <nav class="border-b border-sand-100"><div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between"><div class="flex items-center gap-2"><span class="ks-logo" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><span class="font-extrabold text-sand-800">数秘術鑑定士講座</span></div><a href="index.html" class="day-pill">🏠 ホーム</a></div></nav>
+  <div class="day-nav"><div class="day-nav__inner">
+    <a href="step0.html" class="day-pill">STEP0</a>
+    <a href="step1.html" class="day-pill">STEP1</a>
+    <a href="step2.html" class="day-pill">STEP2</a>
+    <a href="step3.html" class="day-pill">STEP3</a>
+    <a href="step4.html" class="day-pill">STEP4</a>
+    <a href="step5.html" class="day-pill">STEP5</a>
+    <a href="step6.html" class="day-pill">STEP6</a>
+    <a href="step7.html" class="day-pill">STEP7</a>
+    <a href="step8.html" class="day-pill is-current">STEP8</a>
+    <a href="step9.html" class="day-pill">STEP9</a>
+    <a href="step10.html" class="day-pill">STEP10</a>
+    <a href="step11.html" class="day-pill">STEP11</a>
+    <a href="step12.html" class="day-pill">STEP12</a>
+    <a href="graduation.html" class="day-pill">卒業課題</a>
+    <a href="bonus.html" class="day-pill">巻末特典</a>
+  </div></div>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 w-full">
+    <div class="hero-panel text-center mb-10">
+      <span class="part-badge">第3部：相談内容に答える</span>
+      <div class="eyebrow text-[11px] text-sand-400 mb-3">STEP 8</div>
+      <h1 class="jp-title font-extrabold text-sand-800 text-xl">相性鑑定</h1>
+      <p class="text-sm text-sand-500 leading-relaxed mt-2">良い・悪いだけで判断しない、相性の読み方を身につけましょう。</p>
+    </div>
+
+    <section class="mb-8"><div id="senseiOpen"></div></section>
+
+    <section class="mb-10">
+      <div class="bg-white card rounded-2xl border border-sand-200 p-5 sm:p-7 long-read">
+        <h3>相性を「良い・悪い」で終わらせない</h3>
+        <p>相性鑑定でよくある誤解は、「数字が同じなら相性が良い、違えば悪い」という単純な考え方です。実際には、<span class="wavy">似ている部分は安心感を、違う部分は学びや刺激をもたらす</span>ことが多く、どちらも関係を豊かにする材料になります。</p>
+        <h3>相性で読むポイント</h3>
+        <ul class="check-list">
+          <li>似ている部分：価値観が合いやすく、安心できる関係を築きやすいところ</li>
+          <li>違う部分：刺激や学びになる一方、すれ違いの原因にもなりやすいところ</li>
+          <li>惹かれ合う理由：お互いに持っていないものを補い合える魅力</li>
+          <li>ぶつかりやすい理由：譲れない価値観が正反対に出やすい部分</li>
+          <li>お互いから学べること：相手の数字が持つ強みを、自分に取り入れるヒント</li>
+          <li>コミュニケーションのポイント：すれ違いを減らすための伝え方の工夫</li>
+        </ul>
+        <h3>関係の種類によって重視する数字が変わる</h3>
+        <p>恋愛・夫婦は<span class="plain-mark">ソウルとパーソナリティ</span>を中心に、親子は<span class="plain-mark">ライフパスとソウル</span>を中心に、友人・仕事の関係は<span class="plain-mark">ライフパスとディスティニー</span>を中心に見ると、実感に合った相性鑑定がしやすくなります。</p>
+      </div>
+    </section>
+
+    <section class="mb-10" id="compat">
+      <h2 class="jp-title text-base text-sand-700 mb-4 flex items-center gap-2"><span class="text-aura-rose">✨</span> 二人の数字を比べてみよう</h2>
+      <div class="bg-white card rounded-2xl border border-sand-200 p-5">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-[12px] font-bold text-sand-500 mb-2">1人目</label>
+            <select id="personASelect" class="w-full border border-sand-200 rounded-xl px-4 py-3 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal"></select>
+          </div>
+          <div>
+            <label class="block text-[12px] font-bold text-sand-500 mb-2">2人目</label>
+            <select id="personBSelect" class="w-full border border-sand-200 rounded-xl px-4 py-3 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal"></select>
+          </div>
+        </div>
+        <button id="compareBtn" class="mt-4 bg-aura-teal text-white font-bold rounded-full px-6 py-3 text-sm hover:bg-aura-emerald transition">比べてみる</button>
+        <p id="compareError" class="text-[11px] text-rose-500 mt-2" style="display:none">STEP0・STEP2で2人以上のデータを登録してから使えます。</p>
+      </div>
+      <div id="compareResult" class="mt-5"></div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="jp-title text-base text-sand-700 mb-4 flex items-center gap-2"><span class="text-aura-gold">✏️</span> 相性リーディング・ワーク</h2>
+      <div class="guide-box">
+        <p class="text-[12.5px] leading-relaxed text-sand-600">比較結果を見ながら、以下を書き出してみましょう。</p>
+        <ul class="check-list mt-3 text-[12.5px] text-sand-600">
+          <li>惹かれ合う理由になりそうなのはどこですか？</li>
+          <li>ぶつかりやすい理由になりそうなのはどこですか？</li>
+          <li>お互いから学べることは何ですか？</li>
+          <li>関係を良くするために、次にできる具体的な行動は何ですか？</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="day-footer-nav">
+      <a href="step7.html"><span class="label-sm">BACK</span><b>← STEP7 相談内容別の鑑定</b></a>
+      <a href="step9.html" class="next"><span class="label-sm">NEXT</span><b>STEP9 人生サイクルと現在の運気 →</b></a>
+    </div>
+  </main>
+
+  <script src="assets/numerology-data.js?v=6"></script>
+  <script>
+    document.getElementById('senseiOpen').innerHTML = sensei(`
+      <p>相性の相談は、恋愛以外にも夫婦・親子・友人・仕事の関係など、幅広く聞かれます。「同じだから良い、違うから悪い」ではない読み方を、ここで身につけましょう。</p>
+    `);
+
+    const roster = getRoster();
+    const selectA = document.getElementById('personASelect');
+    const selectB = document.getElementById('personBSelect');
+    if(roster.length >= 2){
+      const options = roster.map((r,i) => `<option value="${i}">${r.name}</option>`).join('');
+      selectA.innerHTML = options;
+      selectB.innerHTML = options;
+      selectB.selectedIndex = 1;
+    } else {
+      document.getElementById('compareError').style.display = 'block';
+      document.getElementById('compareBtn').disabled = true;
+    }
+
+    document.getElementById('compareBtn')?.addEventListener('click', () => {
+      const a = roster[Number(selectA.value)];
+      const b = roster[Number(selectB.value)];
+      if(!a || !b || a === b){
+        document.getElementById('compareResult').innerHTML = `<div class="guide-box">2人の異なるメンバーを選んでください。</div>`;
+        return;
+      }
+      const rows = Object.keys(catLabels).map(key => {
+        const same = a[key] === b[key];
+        return `<div class="field-card mb-2" style="${same ? 'border-color:#8B7CF6' : ''}">
+          <b>${catLabels[key]}${same ? '（一致）' : ''}</b>
+          <p>${a.name}：${displayNumber(a[key])}　／　${b.name}：${displayNumber(b[key])}</p>
+        </div>`;
+      }).join('');
+      document.getElementById('compareResult').innerHTML = `
+        <h3 class="jp-title text-sm text-sand-700 mb-2">${a.name} × ${b.name}</h3>
+        ${rows}
+        <div class="deep-card mt-4">
+          <b class="jp-title text-sand-800 block mb-2">かず先生の相性鑑定文（たたき台）</b>
+          <p>${compatReading(a, b)}</p>
+        </div>`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>STEP0 まず自分を占ってみよう｜数秘術鑑定士講座</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { sand:{50:'#fafaf9',100:'#f5f5f4',200:'#e7e5e4',300:'#d6d3d1',400:'#a8a29e',500:'#78716c',600:'#57534e',700:'#44403c',800:'#292524',900:'#1c1917'}, aura:{teal:'#8B7CF6',emerald:'#6D4FE0',rose:'#e11d48',gold:'#FF9E1B',violet:'#7e22ce',sky:'#0369a1'} },
+      fontFamily: { serif:['Georgia','Times New Roman','serif'], sans:['-apple-system','Hiragino Kaku Gothic ProN','Yu Gothic','YuGothic','Meiryo','sans-serif'], jp:['Yu Mincho','YuMincho','Hiragino Mincho ProN','Hiragino Mincho Pro','serif'] }
+    } } }
+  </script>
+  <link rel="stylesheet" href="assets/numerology-style.css?v=3">
+</head>
+<body>
+  <nav class="border-b border-sand-100"><div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between"><div class="flex items-center gap-2"><span class="ks-logo" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><span class="font-extrabold text-sand-800">数秘術鑑定士講座</span></div><a href="index.html" class="day-pill">🏠 ホーム</a></div></nav>
+  <div class="day-nav"><div class="day-nav__inner">
+    <a href="step0.html" class="day-pill is-current">STEP0</a>
+    <a href="step1.html" class="day-pill">STEP1</a>
+    <a href="step2.html" class="day-pill">STEP2</a>
+    <a href="step3.html" class="day-pill">STEP3</a>
+    <a href="step4.html" class="day-pill">STEP4</a>
+    <a href="step5.html" class="day-pill">STEP5</a>
+    <a href="step6.html" class="day-pill">STEP6</a>
+    <a href="step7.html" class="day-pill">STEP7</a>
+    <a href="step8.html" class="day-pill">STEP8</a>
+    <a href="step9.html" class="day-pill">STEP9</a>
+    <a href="step10.html" class="day-pill">STEP10</a>
+    <a href="step11.html" class="day-pill">STEP11</a>
+    <a href="step12.html" class="day-pill">STEP12</a>
+    <a href="graduation.html" class="day-pill">卒業課題</a>
+  </div></div>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 w-full">
+    <div class="hero-panel text-center mb-10">
+      <span class="part-badge">第1部：自分を占う</span>
+      <div class="eyebrow text-[11px] text-sand-400 mb-3">STEP 0 ／ まず自分を占ってみよう</div>
+      <h1 class="jp-title font-extrabold text-sand-800 text-xl">かず先生と、あなた自身から占ってみよう</h1>
+      <p class="text-sm text-sand-500 leading-relaxed mt-2">この講座では最後まで「かず先生」が案内役として登場します。まずはあなた自身のチャートを出すところから始めましょう。</p>
+    </div>
+
+    <section class="mb-10" id="intro">
+      <div id="senseiIntro"></div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="jp-title text-base text-sand-700 mb-4 flex items-center gap-2"><span class="text-aura-gold">🧭</span> 5つの数字で、こんなことが分かります</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-[12px]">
+        <div class="field-card"><b>ライフパス</b><p>生まれ持った人生の土台・大きなテーマ</p></div>
+        <div class="field-card"><b>バースデー</b><p>生まれ持った得意なこと・才能のクセ</p></div>
+        <div class="field-card"><b>ディスティニー</b><p>今の名前が示す、人生で果たす役割</p></div>
+        <div class="field-card"><b>ソウル</b><p>心の奥にある、本当の望み</p></div>
+        <div class="field-card"><b>パーソナリティ</b><p>周囲から見えている、あなたの印象</p></div>
+      </div>
+    </section>
+
+    <section class="mb-10" id="calc">
+      <h2 class="jp-title text-base text-sand-700 mb-4 flex items-center gap-2"><span class="text-aura-rose">✨</span> あなたのチャートを出してみよう</h2>
+      <div class="bg-white card rounded-2xl border border-sand-200 p-5">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-[12px] font-bold text-sand-500 mb-2">お名前（ローマ字）</label>
+            <input id="meName" class="w-full border border-sand-200 rounded-xl px-4 py-3 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal" placeholder="例：YAMADA HANAKO">
+            <p class="text-[11px] text-sand-400 mt-1.5">今使っている名前のローマ字表記でOK。旧姓や活動名の使い分けはSTEP3で詳しく学びます。</p>
+          </div>
+          <div>
+            <label class="block text-[12px] font-bold text-sand-500 mb-2">生年月日</label>
+            <input id="meDate" type="date" class="w-full border border-sand-200 rounded-xl px-4 py-3 text-sand-800 bg-sand-50 outline-none focus:border-aura-teal" min="1900-01-01" max="2030-12-31">
+          </div>
+        </div>
+        <button id="meBtn" class="mt-4 bg-aura-teal text-white font-bold rounded-full px-6 py-3 text-sm hover:bg-aura-emerald transition">自分のチャートを出す</button>
+        <p id="meError" class="text-[11px] text-rose-500 mt-2" style="display:none">お名前（ローマ字）と生年月日を両方入力してください。</p>
+      </div>
+    </section>
+
+    <section class="mb-10" id="resultSection" style="display:none">
+      <div id="senseiResult" class="mb-5"></div>
+      <div class="number-grid" id="numberGrid"></div>
+      <div id="senseiClosing" class="mt-5"></div>
+    </section>
+
+    <div class="day-footer-nav">
+      <span></span>
+      <a href="step1.html" class="next"><span class="label-sm">NEXT</span><b>STEP1 数秘術とは？ →</b></a>
+    </div>
+  </main>
+
+  <script src="assets/numerology-data.js?v=3"></script>
+  <script>
+    function renderIntro(){
+      document.getElementById('senseiIntro').innerHTML = sensei(`
+        <p>はじめまして、かず先生です🦊</p>
+        <p>これから一緒に、ピタゴラス式数秘術を学んでいきます。難しい暗記はいりません。<b>まずあなた自身を占いながら</b>、少しずつ言葉を覚えていきましょう。</p>
+        <p>準備ができたら、下にお名前（ローマ字）と生年月日を入れてくださいね。</p>
+      `);
+    }
+
+    function numberCard(key, value){
+      const meta = numberRoles[key];
+      const m = meaningOf(value);
+      return `
+        <div class="number-card">
+          <div class="num-role">${meta.role}</div>
+          <div class="num-name">${meta.name}</div>
+          <div class="num-value">${displayNumber(value)}</div>
+          <div class="num-keyword">${m.keyword}</div>
+          <p>${m.essence}</p>
+          <div class="num-sub">
+            <span><b>強み：</b>${m.gift}</span>
+            <span><b>気をつけたいこと：</b>${m.caution}</span>
+          </div>
+        </div>`;
+    }
+
+    function renderResult(entry){
+      document.getElementById('resultSection').style.display = 'block';
+      document.getElementById('senseiResult').innerHTML = sensei(`
+        <p>${entry.name}さん、お待たせしました！あなたのチャートが出ましたよ。</p>
+        <p>数字ごとに短い説明をつけていますが、今はまだ「へえ、そうなんだ」くらいで大丈夫。この先のSTEPで、1つずつじっくり読み方を学んでいきます。</p>
+      `);
+      const grid = document.getElementById('numberGrid');
+      grid.innerHTML = ['lifePath','birthday','destiny','soul','personality'].map(key => numberCard(key, entry[key])).join('');
+      document.getElementById('senseiClosing').innerHTML = sensei(`
+        <p>この5つの数字が、あなたの数秘チャートの土台になります。ここで出た結果は、この後の学習でずっと「自分の教材」として使っていきますよ。</p>
+        <p>今日はここまででOKです。お疲れさまでした。</p>
+      `);
+    }
+
+    document.getElementById('meBtn')?.addEventListener('click', () => {
+      const name = document.getElementById('meName').value.trim();
+      const date = document.getElementById('meDate').value;
+      const errEl = document.getElementById('meError');
+      if(!name || !date){ errEl.style.display = 'block'; return; }
+      errEl.style.display = 'none';
+      const [y,m,d] = date.split('-').map(Number);
+      const entry = setMe(name, y, m, d);
+      renderResult(entry);
+    });
+
+    renderIntro();
+  </script>
+</body>
+</html>
