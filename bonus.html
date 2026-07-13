@@ -98,7 +98,7 @@
 ・不安をあおったり、悩みを頭ごなしに否定したりはしない
 ・現実的な行動提案を入れる
 ・Markdown記法（**太字**などのアスタリスク表記）は使わず、プレーンテキストで書く
-・文字数は900〜1200字程度にする`;
+・鑑定書がPDF 1ページに収まるよう、文字数は650〜850字程度にする`;
 
     const templates = {
       love: { label:'恋愛・結婚', eyebrow:'LOVE & MARRIAGE', theme:'love', placeholder:'例：交際中の相手との今後について' },
@@ -293,8 +293,10 @@ ${TONE_RULES}`;
 
     function renderCertificate({ title, eyebrow, name, readerName, theme, numbersHtml, body }){
       const signatureName = readerName || '鑑定士名';
+      const bodyLength = body.replace(/\s/g, '').length;
+      const densityClass = bodyLength > 900 || title.includes('親子') ? ' is-compact' : bodyLength > 700 ? ' is-balanced' : '';
       document.getElementById('certificateArea').innerHTML = `
-        <div class="certificate-sheet">
+        <div class="certificate-sheet${densityClass}">
           <div class="cert-ambient" aria-hidden="true">
             <span>1</span><span>3</span><span>5</span><span>7</span><span>9</span>
           </div>

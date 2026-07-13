@@ -395,12 +395,107 @@ body { margin:0; color:#44403c; background:#fff; font-family:-apple-system,"Hira
   overflow-wrap:anywhere;
 }
 @media print {
-  @page { size:A4; margin:12mm; }
+  @page { size:A4; margin:8mm; }
   body * { visibility:hidden; }
+  html, body { width:210mm; min-height:297mm; background:#fff; }
   #certificateArea, #certificateArea * { visibility:visible; }
   #certificateArea { position:absolute; left:0; top:0; width:100%; margin:0; padding:0; }
-  .certificate-sheet { border:none; box-shadow:none; max-width:100%; padding:0; border-radius:0; }
-  .cert-frame { padding:1.25cm 1.05cm; min-height:calc(297mm - 48mm); }
+  .certificate-sheet { border:none; box-shadow:none; max-width:100%; min-height:281mm; padding:0; border-radius:0; }
+  .certificate-sheet:before { width:220px; height:220px; top:-145px; right:-100px; }
+  .certificate-sheet:after { width:180px; height:180px; left:-100px; bottom:-95px; }
+  .cert-ambient { font-size:1rem; }
+  .cert-frame {
+    box-sizing:border-box;
+    min-height:281mm;
+    padding:9mm 9mm 8mm;
+    display:flex;
+    flex-direction:column;
+  }
+  .cert-frame:before { inset:8px; }
+  .cert-frame .corner { width:26px; height:26px; }
+  .cert-frame .corner-tl { top:8px; left:8px; }
+  .cert-frame .corner-tr { top:8px; right:8px; }
+  .cert-frame .corner-bl { bottom:8px; left:8px; }
+  .cert-frame .corner-br { bottom:8px; right:8px; }
+  .cert-kicker { font-size:8.5px; letter-spacing:.2em; margin-bottom:4mm; }
+  .cert-emblem { width:48px; height:48px; margin-bottom:4mm; box-shadow:none; }
+  .cert-emblem span { width:32px; height:32px; font-size:1.05rem; }
+  .cert-frame h1.cert-title-jp { font-size:1.22rem; line-height:1.25; letter-spacing:.1em; }
+  .cert-title-en { font-size:7.5px; letter-spacing:.18em; margin-top:2mm; }
+  .cert-divider { gap:5mm; margin:5mm 0 4mm; }
+  .cert-divider span { font-size:7px; letter-spacing:.1em; }
+  .cert-meta {
+    padding:3mm 4mm;
+    font-size:10px;
+    margin-bottom:3mm;
+    gap:2mm 8mm;
+  }
+  .cert-theme {
+    padding:2.8mm 3.5mm;
+    margin-bottom:3mm;
+    font-size:10px;
+    line-height:1.45;
+  }
+  .cert-numbers {
+    grid-template-columns:repeat(5,1fr);
+    gap:2.5mm;
+    margin-bottom:4mm;
+  }
+  .cert-numbers .cert-group-title {
+    font-size:10px;
+    padding-bottom:1.4mm;
+    margin-top:1mm;
+  }
+  .cert-badge {
+    min-height:0;
+    padding:2.4mm 1.5mm 2mm;
+  }
+  .cert-badge .ring {
+    width:36px;
+    height:36px;
+    margin-bottom:1.8mm;
+    box-shadow:0 0 0 3px rgba(184,144,74,.08), inset 0 0 0 1px rgba(91,74,130,.18);
+    font-size:1rem;
+  }
+  .cert-badge .ring:after { width:4px; height:4px; right:1px; top:6px; }
+  .cert-badge .role { font-size:7.2px; line-height:1.2; }
+  .cert-badge .kw { font-size:8.4px; line-height:1.25; margin-top:1mm; }
+  .cert-body-wrap {
+    flex:1 1 auto;
+    padding:5mm 5.5mm 4.5mm;
+    margin-bottom:4mm;
+    display:flex;
+    align-items:flex-start;
+  }
+  .cert-body-wrap:before { inset:4mm auto 4mm 4mm; }
+  .cert-body {
+    font-size:10.4px;
+    line-height:1.62;
+    padding-left:2mm;
+  }
+  .cert-signature {
+    flex:0 0 auto;
+    padding-top:3mm;
+  }
+  .cert-signature .sig-label { font-size:7.5px; margin-bottom:1mm; }
+  .cert-signature .sig-name { font-size:.85rem; }
+  .certificate-sheet.is-balanced .cert-body { font-size:9.7px; line-height:1.5; }
+  .certificate-sheet.is-balanced .cert-body-wrap { padding-top:4mm; padding-bottom:4mm; }
+  .certificate-sheet.is-compact .cert-kicker { margin-bottom:3mm; }
+  .certificate-sheet.is-compact .cert-emblem { width:42px; height:42px; margin-bottom:3mm; }
+  .certificate-sheet.is-compact .cert-emblem span { width:28px; height:28px; font-size:.95rem; }
+  .certificate-sheet.is-compact .cert-frame h1.cert-title-jp { font-size:1.12rem; }
+  .certificate-sheet.is-compact .cert-divider { margin:4mm 0 3mm; }
+  .certificate-sheet.is-compact .cert-meta { padding:2.2mm 3.5mm; margin-bottom:2.3mm; }
+  .certificate-sheet.is-compact .cert-theme { padding:2.2mm 3.5mm; margin-bottom:2.3mm; line-height:1.35; }
+  .certificate-sheet.is-compact .cert-numbers { gap:1.8mm; margin-bottom:3mm; }
+  .certificate-sheet.is-compact .cert-badge { padding:1.8mm 1mm 1.6mm; }
+  .certificate-sheet.is-compact .cert-badge .ring { width:31px; height:31px; font-size:.9rem; margin-bottom:1mm; }
+  .certificate-sheet.is-compact .cert-badge .role { font-size:6.7px; }
+  .certificate-sheet.is-compact .cert-badge .kw { font-size:7.7px; line-height:1.18; }
+  .certificate-sheet.is-compact .cert-body-wrap { padding:4mm 5mm 3.5mm; margin-bottom:3mm; }
+  .certificate-sheet.is-compact .cert-body { font-size:9px; line-height:1.42; }
+  .certificate-sheet.is-compact .cert-signature { padding-top:2.5mm; }
   .cert-badge { break-inside:avoid; }
   .cert-body-wrap { break-inside:avoid; }
   .no-print { display:none !important; }
